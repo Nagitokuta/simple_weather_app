@@ -1,0 +1,223 @@
+/* ページ全体の基本設定 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Meiryo', sans-serif;
+    background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+    color: #2d3436;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* メインコンテナ */
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    max-width: 450px;
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* ヘッダー */
+.app-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.app-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #2d3436;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* 検索セクション */
+.search-section {
+    margin-bottom: 30px;
+}
+
+.btn {
+    background: linear-gradient(135deg, #00b894 0%, #00a085 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 184, 148, 0.3);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, #fd79a8 0%, #e84393 100%);
+    width: auto;
+    margin-bottom: 0;
+    margin-left: 10px;
+}
+
+.btn-secondary:hover {
+    box-shadow: 0 4px 15px rgba(232, 67, 147, 0.3);
+}
+
+/* 区切り文字 */
+.or-divider {
+    text-align: center;
+    color: #636e72;
+    margin: 20px 0;
+    font-size: 0.9rem;
+    position: relative;
+}
+
+.or-divider::before,
+.or-divider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 30%;
+    height: 1px;
+    background: #ddd;
+}
+
+.or-divider::before {
+    left: 0;
+}
+
+.or-divider::after {
+    right: 0;
+}
+
+/* 検索フォーム */
+.search-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.search-form label {
+    font-weight: 600;
+    color: #2d3436;
+    white-space: nowrap;
+}
+
+.region-input {
+    flex: 1;
+    padding: 12px 16px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    min-width: 150px;
+}
+
+.region-input:focus {
+    outline: none;
+    border-color: #74b9ff;
+    box-shadow: 0 0 0 3px rgba(116, 185, 255, 0.1);
+}
+
+/* 天気情報セクション */
+.weather-section {
+    margin-top: 30px;
+}
+
+.weather-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #2d3436;
+    margin-bottom: 20px;
+    padding-left: 15px;
+    border-left: 4px solid #74b9ff;
+}
+
+.weather-display {
+    background: rgba(116, 185, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    border: 1px solid rgba(116, 185, 255, 0.2);
+}
+
+.weather-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(116, 185, 255, 0.1);
+}
+
+.weather-item:last-child {
+    border-bottom: none;
+}
+
+.weather-label {
+    font-weight: 600;
+    color: #636e72;
+}
+
+.weather-value {
+    font-weight: 700;
+    color: #2d3436;
+    font-size: 1.1rem;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    
+    .container {
+        padding: 20px;
+        border-radius: 15px;
+    }
+    
+    .app-title {
+        font-size: 1.5rem;
+    }
+    
+    .search-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .search-form label {
+        margin-bottom: 5px;
+    }
+    
+    .btn-secondary {
+        margin-left: 0;
+        margin-top: 10px;
+        width: 100%;
+    }
+    
+    .weather-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>シンプル天気予報アプリ</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="app-header">
+        <h1 class="app-title">🌤️ シンプル天気予報アプリ</h1>
+      </header>
+
+      <main class="main-content">
+        <section class="search-section">
+          <button id="current-location-btn" class="btn btn-primary">
+            現在地の天気を見る
+          </button>
+          <div class="or-divider">【または】</div>
+          <div class="search-form">
+            <label for="region-input">地域名：</label>
+            <input
+              type="text"
+              id="region-input"
+              name="region"
+              placeholder="例：東京"
+              class="region-input"
+            />
+            <button id="search-btn" class="btn btn-secondary">検索</button>
+          </div>
+        </section>
+
+        <section class="weather-section">
+          <h2 class="weather-title">◆ 現在の天気情報</h2>
+          <div id="weather-display" class="weather-display">
+            <div class="weather-item">
+              <span class="weather-label">地域名：</span>
+              <span id="location-name" class="weather-value">---</span>
+            </div>
+            <div class="weather-item">
+              <span class="weather-label">天気：</span>
+              <span id="weather-condition" class="weather-value">---</span>
+            </div>
+            <div class="weather-item">
+              <span class="weather-label">気温：</span>
+              <span id="temperature" class="weather-value">---</span>
+            </div>
+            <div class="weather-item">
+              <span class="weather-label">湿度：</span>
+              <span id="humidity" class="weather-value">---</span>
+            </div>
+            <div class="weather-item">
+              <span class="weather-label">風速：</span>
+              <span id="wind-speed" class="weather-value">---</span>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="config.js"></script>
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
